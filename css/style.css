@@ -23,7 +23,7 @@ select {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 300px;
   margin: 60px auto;
   background: white;
   padding: 30px;
