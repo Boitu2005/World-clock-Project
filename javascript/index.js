@@ -6,7 +6,7 @@ function updateTime() {
     let johannesburgTimeElement = johannesburgElement.querySelector(".time");
     let johannesburgTime = moment().tz("South Africa/Johannesburg");
 
-    johannesburgDateElement.innerHTML = johannesburgTime.format("MMMM	Do YYYY");
+    johannesburgDateElement.innerHTML = johannesburgTime.format("LL");
     johannesburgTimeElement.innerHTML = johannesburgTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
@@ -20,7 +20,9 @@ function updateTime() {
     let romeTime = moment().tz("Italy/rome");
 
     romeDateElement.innerHTML = romeTime.format("LL");
-    romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
+    romeTimeElement.innerHTML = romeTime.format(
+      "HH:mm:ss [<small>]A[</small>]"
+    );
   }
 }
 
