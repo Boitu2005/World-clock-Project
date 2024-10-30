@@ -12,7 +12,7 @@ function updateTime() {
     );
   }
 
-  //madrid
+  //rome
   let romeElement = document.querySelector("#rome");
   if (romeElement) {
     let romeDateElement = romeElement.querySelector(".date");
