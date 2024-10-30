@@ -17,7 +17,7 @@ function updateTime() {
   if (madridElement) {
     let madridDateElement = madridElement.querySelector(".date");
     let madridTimeElement = madridElement.querySelector(".time");
-    let madridTime = moment().tz("Spain/Madrid");
+    let madridTime = moment().tz("Spain/madrid");
 
     madridDateElement.innerHTML = madridTime.format("MMMM	Do YYYY");
     madridTimeElement.innerHTML = madridTime.format(
