@@ -19,7 +19,7 @@ function updateTime() {
     let romeTimeElement = romeElement.querySelector(".time");
     let romeTime = moment().tz("Italy/rome");
 
-    romeDateElement.innerHTML = romeTime.format("L");
+    romeDateElement.innerHTML = romeTime.format("LL");
     romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
   }
 }
