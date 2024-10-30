@@ -8,7 +8,7 @@ function updateTime() {
 
     johannesburgDateElement.innerHTML = johannesburgTime.format("LL");
     johannesburgTimeElement.innerHTML = johannesburgTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      "HH:mm:ss [<small>]A[</small>]"
     );
   }
 
