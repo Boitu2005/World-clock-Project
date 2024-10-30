@@ -1,13 +1,13 @@
 function updateTime() {
   // Los Angeles
-  let losAngelesElement = document.querySelector("#johannesburg");
-  if (losAngelesElement) {
-    let losAngelesDateElement = losAngelesElement.querySelector(".date");
-    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-    let losAngelesTime = moment().tz("South Africa/Johannesburg");
+  let johannesburgElement = document.querySelector("#johannesburg");
+  if (johannesburgElement) {
+    let johannesburgDateElement = johannesburgElement.querySelector(".date");
+    let johannesburgTimeElement = johannesburgElement.querySelector(".time");
+    let johannesburgTime = moment().tz("South Africa/Johannesburg");
 
-    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM	Do YYYY");
-    losAngelesTimeElement.innerHTML = losAngelesTime.format(
+    johannesburgDateElement.innerHTML = johannesburgTime.format("MMMM	Do YYYY");
+    johannesburgTimeElement.innerHTML = johannesburgTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
