@@ -13,16 +13,14 @@ function updateTime() {
   }
 
   //madrid
-  let madridElement = document.querySelector("#madrid");
-  if (madridElement) {
-    let madridDateElement = madridElement.querySelector(".date");
-    let madridTimeElement = madridElement.querySelector(".time");
-    let madridTime = moment().tz("Spain/madrid");
+  let romeElement = document.querySelector("#rome");
+  if (romeElement) {
+    let romeDateElement = romeElement.querySelector(".date");
+    let romeTimeElement = romeElement.querySelector(".time");
+    let romeTime = moment().tz("Italy/rome");
 
-    madridDateElement.innerHTML = madridTime.format("MMMM	Do YYYY");
-    madridTimeElement.innerHTML = madridTime.format(
-      "h:mm:ss [<small>]A[</small>]"
-    );
+    romeDateElement.innerHTML = romeTime.format("MMMM	Do YYYY");
+    romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
   }
 }
 
