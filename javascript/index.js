@@ -1,5 +1,5 @@
 function updateTime() {
-  // Los Angeles
+  // johannesburg
   let johannesburgElement = document.querySelector("#johannesburg");
   if (johannesburgElement) {
     let johannesburgDateElement = johannesburgElement.querySelector(".date");
@@ -12,15 +12,15 @@ function updateTime() {
     );
   }
 
-  // Paris
-  let parisElement = document.querySelector("#madrid");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisTime = moment().tz("Spain/Madrid");
+  //madrid
+  let madridElement = document.querySelector("#madrid");
+  if (madridElement) {
+    let madridDateElement = madridElement.querySelector(".date");
+    let madridTimeElement = madridElement.querySelector(".time");
+    let madridTime = moment().tz("Spain/Madrid");
 
-    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
-    parisTimeElement.innerHTML = parisTime.format(
+    madridDateElement.innerHTML = madridTime.format("MMMM	Do YYYY");
+    madridTimeElement.innerHTML = madridTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
