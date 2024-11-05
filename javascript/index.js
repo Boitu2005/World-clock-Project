@@ -3,7 +3,7 @@ function updateTime() {
   if (londonElement) {
     let londonDateElement = londonElement.querySelector(".date");
     let londonTimeElement = londonElement.querySelector(".time");
-    let londonTime = moment().tz("Europe/London");
+    let londonTime = moment().tz("Europe/london");
 
     londonDateElement.innerHTML = londonTime.format("MMM Do YYYY");
     londonTimeElement.innerHTML = londonTime.format(
@@ -19,14 +19,14 @@ function updateTime() {
     tokyoDateElement.innerHTML = tokyoTime.format("MMM Do YYYY");
     tokyoTimeElement.innerHTML = tokyoTime.format("h:m:ss[<small>]A[</small>]");
   }
-  let mawsonElement = document.querySelector("#mawson");
-  if (mawsonElement) {
-    let mawsonDateElement = mawsonElement.querySelector(".date");
-    let mawsonTimeElement = mawsonElement.querySelector(".time");
-    let mawsonTime = moment().tz("Antarctica/Mawson");
+  let maseruElement = document.querySelector("#maseru");
+  if (maseruElement) {
+    let maseruDateElement = maseruElement.querySelector(".date");
+    let maseruTimeElement = maseruElement.querySelector(".time");
+    let maseruTime = moment().tz("Lesotho/Maseru");
 
-    mawsonDateElement.innerHTML = mawsonTime.format("MMM Do YYYY");
-    mawsonTimeElement.innerHTML = mawsonTime.format(
+    maseruDateElement.innerHTML = maseruTime.format("MMM Do YYYY");
+    maseruTimeElement.innerHTML = maseruTime.format(
       "h:m:ss[<small>]A[</small>]"
     );
   }
