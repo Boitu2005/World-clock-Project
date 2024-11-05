@@ -1,51 +1,56 @@
 function updateTime() {
-  // johannesburg
-  let johannesburgElement = document.querySelector("#johannesburg");
-  if (johannesburgElement) {
-    let johannesburgDateElement = johannesburgElement.querySelector(".date");
-    let johannesburgTimeElement = johannesburgElement.querySelector(".time");
-    let johannesburgTime = moment().tz("South Africa/Johannesburg");
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonTime = moment().tz("Europe/London");
 
-    johannesburgDateElement.innerHTML = johannesburgTime.format("LL");
-    johannesburgTimeElement.innerHTML = johannesburgTime.format(
-      "HH:mm:ss [<small>]A[</small>]"
+    londonDateElement.innerHTML = londonTime.format("MMM Do YYYY");
+    londonTimeElement.innerHTML = londonTime.format(
+      "h:m:ss[<small>]A[</small>]"
     );
   }
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
 
-  //rome
-  let romeElement = document.querySelector("#rome");
-  if (romeElement) {
-    let romeDateElement = romeElement.querySelector(".date");
-    let romeTimeElement = romeElement.querySelector(".time");
-    let romeTime = moment().tz("Italy/rome");
+    tokyoDateElement.innerHTML = tokyoTime.format("MMM Do YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format("h:m:ss[<small>]A[</small>]");
+  }
+  let mawsonElement = document.querySelector("#mawson");
+  if (mawsonElement) {
+    let mawsonDateElement = mawsonElement.querySelector(".date");
+    let mawsonTimeElement = mawsonElement.querySelector(".time");
+    let mawsonTime = moment().tz("Antarctica/Mawson");
 
-    romeDateElement.innerHTML = romeTime.format("LL");
-    romeTimeElement.innerHTML = romeTime.format(
-      "HH:mm:ss [<small>]A[</small>]"
+    mawsonDateElement.innerHTML = mawsonTime.format("MMM Do YYYY");
+    mawsonTimeElement.innerHTML = mawsonTime.format(
+      "h:m:ss[<small>]A[</small>]"
     );
   }
 }
-
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `
-    <div class="city">
-      <div>
-        <h2>${cityName}</h2>
-        <div class="date">${cityTime.format("LL")}</div>
-      </div>
-      <div class="time">${cityTime.format("HH:mm:ss")} <small>${cityTime.format(
-    "A"
-  )}</small></div>
+  citiesElement.innerHTML = ` <div class="city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "h:mm:ss"
+          )}<small>${cityTime.format("A")}</small>
     </div>
-    `;
+        </div>`;
 }
-
 updateTime();
 setInterval(updateTime, 1000);
-
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
